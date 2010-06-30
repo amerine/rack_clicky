@@ -5,13 +5,12 @@ begin
   require 'jeweler'
   Jeweler::Tasks.new do |gem|
     gem.name = "rack_clicky"
-    gem.summary = %Q{TODO: one-line summary of your gem}
-    gem.description = %Q{TODO: longer description of your gem}
+    gem.summary = "Clicky Analytics for your Rack Apps"
+    gem.description = "Embeds the Clicky tracking code at the end of your HTML"
     gem.email = "mark@amerine.net"
     gem.homepage = "http://github.com/amerine/rack_clicky"
     gem.authors = ["Mark Turner"]
     gem.add_development_dependency "thoughtbot-shoulda", ">= 0"
-    # gem is a Gem::Specification... see http://www.rubygems.org/read/chapter/20 for additional settings
   end
   Jeweler::GemcutterTasks.new
 rescue LoadError
