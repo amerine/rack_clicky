@@ -36,7 +36,7 @@ module Rack
     private
     
     def track_code
-      TRACKING_CODE.sub(/\{\{CODE\}\}/, @site_id)
+      TRACKING_CODE.gsub(/\{\{CODE\}\}/, @site_id)
     end
     
   end
