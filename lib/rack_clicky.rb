@@ -2,9 +2,9 @@ module Rack
   class Clicky
     
     TRACKING_CODE = <<-EOTC 
-    <script src="http://static.getclicky.com/js" type="text/javascript"></script>
-    <script type="text/javascript">clicky.init({{CODE}});</script>
-    <noscript><p><img alt="Clicky" width="1" height="1" src="http://in.getclicky.com/{{CODE}}ns.gif" /></p></noscript>
+    <script src="//static.getclicky.com/js" type="text/javascript"></script>
+    <script type="text/javascript">try{ clicky.init({{CODE}}); }catch(e){}</script>
+    <noscript><p><img alt="Clicky" width="1" height="1" src="//in.getclicky.com/{{CODE}}ns.gif" /></p></noscript>
     EOTC
     
     def initialize(app, site_id, options = {})
