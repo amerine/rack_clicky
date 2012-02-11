@@ -1,23 +1,22 @@
 require 'helper'
 
-class TestRackClicky < Test::Unit::TestCase
-  context "Embedding clicky" do
-    should "place the tracking code at the end of an HTML request" do
+describe RackClicky do
+  describe "Embedding clicky" do
+    it "place the tracking code at the end of an HTML request" do
       assert_match EXPECTED_CODE, request.body
     end
 
-    should "place the tracking code at the end of an XHTML request" do
+    it "place the tracking code at the end of an XHTML request" do
       assert_match EXPECTED_CODE, request(:content_type => 'application/xhtml+xml').body
     end
 
-    should "not place the tracking code in a non HTML request" do
-      assert_no_match EXPECTED_CODE, request(:content_type => 'application/xml', :body => [XML]).body
+    it "not place the tracking code in a non HTML request" do
+      refute_match EXPECTED_CODE, request(:content_type => 'application/xml', :body => [XML]).body
     end
 
-    should "insert the site id" do
+    it "insert the site id" do
       assert_match /clicky\.init\(000000\)/, request.body
     end
-
   end
 
   private
