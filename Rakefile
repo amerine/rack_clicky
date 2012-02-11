@@ -61,7 +61,7 @@ if defined? Gem
     sh <<-SH
       gem push #{package(".gem")} &&
       git commit --allow-empty -a -m '#{package_version} release'  &&
-      git tag -s v#{package_version} -m '#{package_version} release'  &&
+      git tag v#{package_version} -m '#{package_version} release'  &&
       git push &&
       git push --tags
     SH
